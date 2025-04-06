@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Position Analysis</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Chessboard.js and chess.js libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-chess fa-2x"></i>
+                <h1>Chess Position Analyzer</h1>
+            </div>
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+        </header>
+
+        <main class="analysis-main">
+            <div class="analysis-container">
+                <div class="board-section">
+                    <div id="board" class="chessboard"></div>
+                    <div class="board-controls">
+                        <button id="flipBoardBtn" class="btn control-btn"><i class="fas fa-sync"></i> Flip Board</button>
+                        <button id="resetBtn" class="btn control-btn"><i class="fas fa-undo"></i> Reset</button>
+                        <button id="undoBtn" class="btn control-btn"><i class="fas fa-arrow-left"></i> Undo</button>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <div class="active-color-section">
+                        <h3>Active Color (Turn to Play)</h3>
+                        <div class="color-options">
+                            <label class="color-option">
+                                <input type="radio" name="activeColor" value="w" checked> 
+                                <span class="color-piece white-piece">♔</span> White
+                            </label>
+                            <label class="color-option">
+                                <input type="radio" name="activeColor" value="b"> 
+                                <span class="color-piece black-piece">♚</span> Black
+                            </label>
+                        </div>
+                        <button id="updateColorBtn" class="btn">Update Board</button>
+                    </div>
+                    
+                    <div class="fen-section">
+                        <h3>FEN Notation</h3>
+                        <div class="fen-display">
+                            <input type="text" id="fenInput" readonly>
+                            <button id="copyFenBtn" class="btn"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="analysis-options">
+                        <h3>Analysis Options</h3>
+                        <button id="analyzeBtn" class="btn option-btn"><i class="fas fa-search"></i> Analyze Position</button>
+                        <button id="exportLichessBtn" class="btn option-btn"><i class="fas fa-external-link-alt"></i> Open in Lichess</button>
+                        <button id="exportChesscomBtn" class="btn option-btn"><i class="fas fa-external-link-alt"></i> Open in Chess.com</button>
+                    </div>
+
+                    <div class="evaluation-section">
+                        <h3>Position Evaluation</h3>
+                        <div class="evaluation-display" id="evaluationDisplay">
+                            <div class="eval-bar">
+                                <div class="eval-value" id="evalValue"></div>
+                            </div>
+                            <div class="best-move" id="bestMove"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="move-history">
+                <h3>Move History</h3>
+                <div class="moves-container" id="moveHistory"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Chess Position Analyzer. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="../static/js/analyze.js"></script>
+</body>
+</html> 

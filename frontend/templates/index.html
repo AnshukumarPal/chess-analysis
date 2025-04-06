@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Position Analyzer</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-chess fa-2x"></i>
+                <h1>Chess Position Analyzer</h1>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Analyze Chess Positions from Images</h2>
+                <p>Upload a screenshot of your chess game and get FEN notation instantly</p>
+            </section>
+
+            <section class="upload-section">
+                <div class="upload-container">
+                    <div class="upload-area" id="dropZone">
+                        <img src="../static/images/upload-icon.png" alt="Upload" class="upload-icon">
+                        <h3>Drag & Drop or Click to Upload</h3>
+                        <p>Supported formats: JPG, PNG</p>
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                        <button class="upload-btn" id="browseBtn">Browse Files</button>
+                    </div>
+                    <div class="preview-area" id="previewArea" style="display: none;">
+                        <img id="imagePreview" src="" alt="Preview">
+                        <div class="preview-controls">
+                            <button class="btn cancel-btn" id="cancelBtn"><i class="fas fa-times"></i> Cancel</button>
+                            <button class="btn analyze-btn" id="analyzeBtn"><i class="fas fa-chess"></i> Analyze Position</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant Analysis</h3>
+                    <p>Get FEN notation in seconds from any chess position screenshot</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chess-board"></i>
+                    <h3>Play & Analyze</h3>
+                    <p>Continue playing from the detected position or analyze with engines</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Share Easily</h3>
+                    <p>Export to Lichess, Chess.com or play directly on our platform</p>
+                    <div class="source-links">
+                        <a href="https://lichess.org" target="_blank"><img src="../static/images/source_links/lichess.png" alt="Lichess" class="source-icon"></a>
+                        <a href="https://chess.com" target="_blank"><img src="../static/images/source_links/chesscom.png" alt="Chess.com" class="source-icon"></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Chess Position Analyzer. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../static/js/main.js"></script>
+</body>
+</html> 
